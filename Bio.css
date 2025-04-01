@@ -115,6 +115,12 @@ body {
 .nav-menu {
     display: flex;
     gap: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.nav-menu::-webkit-scrollbar {
+    display: none;
 }
 
 .nav-item {
@@ -127,6 +133,7 @@ body {
     transition: color 0.3s;
     padding: 0.5rem 0;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -268,11 +275,11 @@ body {
     gap: 1.5rem;
     overflow-x: auto;
     padding-bottom: 1rem;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
 }
 
 .row-content::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
 }
 
 /* Info Cards */
@@ -347,6 +354,8 @@ body {
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s;
+    position: relative;
+    cursor: pointer;
 }
 
 .game-card:hover {
@@ -376,19 +385,17 @@ body {
     margin-bottom: 0.8rem;
 }
 
-.game-link {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    background-color: var(--netflix-red);
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    transition: background-color 0.3s;
-}
-
-.game-link:hover {
-    background-color: #f40612;
+.game-description {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 1rem;
+    color: var(--netflix-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 /* Skills Section */
@@ -442,7 +449,7 @@ body {
     border-radius: 3px;
 }
 
-/* Education Section */
+/* School Section */
 .edu-row {
     display: flex;
     gap: 1.5rem;
@@ -456,6 +463,11 @@ body {
     display: flex;
     gap: 1.5rem;
     transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.school-card {
+    position: relative;
 }
 
 .edu-card:hover {
@@ -477,9 +489,13 @@ body {
     line-height: 1.6;
 }
 
-.edu-details ul {
-    padding-left: 1.5rem;
-    margin-top: 0.5rem;
+.school-description {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--netflix-red);
+    color: var(--netflix-text-secondary);
+    font-size: 0.9rem;
 }
 
 /* Social Media Section */
@@ -487,6 +503,7 @@ body {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .social-card {
@@ -581,8 +598,6 @@ body {
     
     .nav-menu {
         gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
     }
     
     .skill-card {
@@ -632,5 +647,53 @@ body {
     .proceed-btn {
         padding: 0.8rem 2rem;
         font-size: 1rem;
+    }
+    
+    .hero-content {
+        padding-top: 80px;
+    }
+    
+    .hero-profile {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .game-card {
+        flex: 0 0 200px;
+    }
+    
+    .hobby-card {
+        flex: 0 0 180px;
+    }
+    
+    .info-card {
+        flex: 0 0 250px;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .row-title {
+        font-size: 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 0.3rem;
+    }
+    
+    .nav-item {
+        font-size: 0.8rem;
     }
 }
