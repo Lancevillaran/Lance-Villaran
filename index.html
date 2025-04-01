@@ -29,9 +29,9 @@
                     <button class="nav-item active" onclick="showSection('home')">Home</button>
                     <button class="nav-item" onclick="showSection('about')">About</button>
                     <button class="nav-item" onclick="showSection('hobbies')">Hobbies</button>
-                    <button class="nav-item" onclick="showSection('online-games')">Online Games</button>
+                    <button class="nav-item" onclick="showSection('online-games')">Games</button>
                     <button class="nav-item" onclick="showSection('skills')">Skills</button>
-                    <button class="nav-item" onclick="showSection('education')">Education</button>
+                    <button class="nav-item" onclick="showSection('school')">School</button>
                     <button class="nav-item" onclick="showSection('social')">Connect</button>
                 </div>
             </div>
@@ -125,36 +125,54 @@
             <section class="content-row" id="online-games">
                 <h2 class="row-title">Favorite Online Games</h2>
                 <div class="row-content">
-                    <div class="game-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Valorant_logo.svg/1200px-Valorant_logo.svg.png" alt="Valorant">
+                    <div class="game-card" onclick="showGameDescription('ml')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Mobile_Legends_logo.png/1200px-Mobile_Legends_logo.png" alt="Mobile Legends">
                         <div class="game-info">
-                            <h3>Valorant</h3>
-                            <p>Tactical FPS by Riot Games</p>
-                            <a href="https://playvalorant.com/" target="_blank" class="game-link">Visit Site</a>
+                            <h3>Mobile Legends</h3>
+                            <p>MOBA for mobile devices</p>
+                        </div>
+                        <div class="game-description" id="ml-desc">
+                            <p>Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game designed for mobile phones. The game is free-to-play and is one of the most popular mobile games in the world.</p>
                         </div>
                     </div>
-                    <div class="game-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Genshin_Impact_logo.svg/1200px-Genshin_Impact_logo.svg.png" alt="Genshin Impact">
+                    <div class="game-card" onclick="showGameDescription('cf')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/CrossFire_Logo.png/1200px-CrossFire_Logo.png" alt="Crossfire">
                         <div class="game-info">
-                            <h3>Genshin Impact</h3>
-                            <p>Open-world action RPG</p>
-                            <a href="https://genshin.hoyoverse.com/" target="_blank" class="game-link">Visit Site</a>
+                            <h3>Crossfire</h3>
+                            <p>Tactical first-person shooter</p>
+                        </div>
+                        <div class="game-description" id="cf-desc">
+                            <p>CrossFire is a tactical first-person shooter online game developed by Smilegate. It features team-based gameplay with various modes including team deathmatch and search-and-destroy.</p>
                         </div>
                     </div>
-                    <div class="game-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/League_of_Legends_logo.png/1200px-League_of_Legends_logo.png" alt="League of Legends">
+                    <div class="game-card" onclick="showGameDescription('hsr')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Honkai_Star_Rail_logo.png/1200px-Honkai_Star_Rail_logo.png" alt="Honkai Star Rail">
                         <div class="game-info">
-                            <h3>League of Legends</h3>
-                            <p>MOBA by Riot Games</p>
-                            <a href="https://www.leagueoflegends.com/" target="_blank" class="game-link">Visit Site</a>
+                            <h3>Honkai Star Rail</h3>
+                            <p>Space fantasy RPG</p>
+                        </div>
+                        <div class="game-description" id="hsr-desc">
+                            <p>Honkai: Star Rail is a role-playing gacha game featuring turn-based combat. It's set in the Honkai universe and follows the adventures of the Trailblazer aboard the Astral Express.</p>
                         </div>
                     </div>
-                    <div class="game-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Dota_2_Logo.png/1200px-Dota_2_Logo.png" alt="Dota 2">
+                    <div class="game-card" onclick="showGameDescription('codm')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Call_of_Duty_Mobile_Logo.png/1200px-Call_of_Duty_Mobile_Logo.png" alt="Call of Duty Mobile">
                         <div class="game-info">
-                            <h3>Dota 2</h3>
-                            <p>Strategy MOBA by Valve</p>
-                            <a href="https://www.dota2.com/home" target="_blank" class="game-link">Visit Site</a>
+                            <h3>Call of Duty Mobile</h3>
+                            <p>First-person shooter</p>
+                        </div>
+                        <div class="game-description" id="codm-desc">
+                            <p>Call of Duty: Mobile is a free-to-play shooter game in the Call of Duty series for mobile devices. It features various multiplayer modes as well as a battle royale mode.</p>
+                        </div>
+                    </div>
+                    <div class="game-card" onclick="showGameDescription('coc')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Clash_of_Clans_Logo.png/1200px-Clash_of_Clans_Logo.png" alt="Clash of Clans">
+                        <div class="game-info">
+                            <h3>Clash of Clans</h3>
+                            <p>Strategy game</p>
+                        </div>
+                        <div class="game-description" id="coc-desc">
+                            <p>Clash of Clans is a freemium mobile strategy game where players build communities, train troops, and attack other players to earn gold, elixir, and dark elixir.</p>
                         </div>
                     </div>
                 </div>
@@ -167,63 +185,56 @@
                     <div class="skill-card">
                         <div class="skill-icon"><i class="fab fa-html5"></i></div>
                         <div class="skill-info">
-                            <h3>HTML5</h3>
-                            <div class="skill-meter">
-                                <div class="skill-level" style="width: 95%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                        <div class="skill-info">
-                            <h3>CSS3</h3>
+                            <h3>HTML</h3>
                             <div class="skill-meter">
                                 <div class="skill-level" style="width: 90%"></div>
                             </div>
                         </div>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-icon"><i class="fab fa-js"></i></div>
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
                         <div class="skill-info">
-                            <h3>JavaScript</h3>
+                            <h3>CSS</h3>
                             <div class="skill-meter">
                                 <div class="skill-level" style="width: 85%"></div>
                             </div>
                         </div>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-icon"><i class="fab fa-react"></i></div>
+                        <div class="skill-icon"><i class="fab fa-php"></i></div>
                         <div class="skill-info">
-                            <h3>React</h3>
+                            <h3>PHP</h3>
                             <div class="skill-meter">
                                 <div class="skill-level" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-python"></i></div>
+                        <div class="skill-info">
+                            <h3>Python</h3>
+                            <div class="skill-meter">
+                                <div class="skill-level" style="width: 75%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Education Section -->
-            <section class="content-row" id="education">
-                <h2 class="row-title">Education</h2>
+            <!-- School Section -->
+            <section class="content-row" id="school">
+                <h2 class="row-title">My School</h2>
                 <div class="edu-row">
-                    <div class="edu-card">
-                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-card school-card" onclick="showSchoolDescription('feu')">
+                        <div class="edu-icon"><i class="fas fa-school"></i></div>
                         <div class="edu-details">
-                            <h3>Bachelor of Science in Computer Engineering</h3>
-                            <p>University of Example | 2022 - Present</p>
-                            <p>Specialized in Software Development and Hardware Systems</p>
-                        </div>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="edu-details">
-                            <h3>Certifications</h3>
-                            <ul>
-                                <li>Full Stack Web Development</li>
-                                <li>AWS Certified Cloud Practitioner</li>
-                                <li>Certified Scrum Master</li>
-                            </ul>
+                            <h3>FEU Institute of Technology</h3>
+                            <p>Bachelor of Science in Computer Engineering</p>
+                            <p>2022 - Present</p>
+                            <div class="school-description" id="feu-desc">
+                                <p>FEU Institute of Technology is a premier engineering and technology school in Manila, Philippines. It offers programs in computer engineering, information technology, and other tech-related fields.</p>
+                                <p>As a Computer Engineering student, I'm learning about hardware and software integration, embedded systems, and advanced programming concepts.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -283,6 +294,22 @@
             }
         }
 
+        // Show game description
+        function showGameDescription(gameId) {
+            const desc = document.getElementById(`${gameId}-desc`);
+            if (desc) {
+                desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+
+        // Show school description
+        function showSchoolDescription(schoolId) {
+            const desc = document.getElementById(`${schoolId}-desc`);
+            if (desc) {
+                desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+
         // Netflix-style hover effects
         document.querySelectorAll('.info-card, .skill-card, .edu-card, .hobby-card, .game-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
@@ -301,6 +328,16 @@
             const hero = document.querySelector('.hero-banner');
             const scrollPosition = window.scrollY;
             hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+        });
+
+        // Make navigation sticky on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.netflix-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
         });
     </script>
 
